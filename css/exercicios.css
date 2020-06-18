@@ -1,59 +1,105 @@
-.secao{
+.secao {
     float: left;
     width: 100%;
 }
-.mini{
+
+.mini {
     float: left;
     width: 50%;
 }
-.container{
+
+.container {
     margin: 0 auto;
     max-width: 1200px;
 }
-img{
+
+img {
     max-width: 100%;
 }
-.logo, .secao{
+
+.logo, .secao {
     padding: 0 1%;
 }
 
-.logo, .busca, .barra-nav, .menu-principal{
+.logo, .busca, .barra-nav, .menu-principal {
     display: inline-block;
     vertical-align: middle;
 }
+
 .menu-principal li {
     float: left;
 }
-header{
+
+header {
     padding: 0.5em 0;
 }
-.destaques{
+
+.destaques {
     margin-top: 1em;
 }
-.barra-nav{
-    margin:0.4em 0;
+
+.barra-nav {
+    margin: 0.4em 0;
 }
 
-@media (min-width:600px){
-    html{
+@media (max-width:600px) {
+    .barra-nav {
+        background-color: #f0f0f0;
+        padding: 1em;
+        margin: 0;
+        height: 100%;
+        width: 90%;
+        max-width: 300px;
+        position: fixed;
+        z-index: 1;
+        top: 0;
+        left: -90%;
+        transition: left 0.2s ease-out;
+    }
+    .menu-ativo .barra-nav {
+        left: 0;
+    }
+
+    .menu-ativo::after{
+        content: "";
+        display: block;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+
+        background-color: rgba(0, 0, 0, 0.4);
+    }
+}
+
+@media not all and (max-width:600px){
+    .menu-abrir,
+    .menu-fechar{
+        display: none;
+    }
+}
+
+@media (min-width:600px) {
+    html {
         font: size 1.125em;
     }
 }
 
-@media (min-width: 1000px){
-    html{
+@media (min-width: 1000px) {
+    html {
         font-size: 1.25em;
     }
 }
 
-
-@media (min-width:600px){
-    .secao{
+@media (min-width:600px) {
+    .secao {
         width: 50%;
     }
 }
-@media (min-width: 1000px){
-    .secao{
+
+@media (min-width: 1000px) {
+    .secao {
         width: 33.333%;
     }
 }
